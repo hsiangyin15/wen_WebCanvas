@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title>🎨Painting Place✏️</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" href="favicon.ico">
+  <link href="https://fonts.googleapis.com/css?family=Oswald&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&family=Noto+Sans+TC:wght@100&family=Noto+Serif+TC:wght@200&family=Open+Sans+Condensed&display=swap" rel="stylesheet">
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js" type="text/javascript"></script>
+</head>
+
+<body background="images/valley.jpg" ;>
+  <h1>Paint What You like !</h1>
+  <div class="main_block">
+    <canvas id="canvas" width="700" height="500">
+
+    </canvas>
+  </div>
+  <div class="tool">
+    <a href="#" id="undo" onclick="undo()"><img class="tool_image" src="images/undo.png" alt="undo"></a>
+    <a href="#" id="redo" onclick="redo()"><img class="tool_image" src="images/redo.png" alt="redo"></a>
+    <a href="#" id="pen" onclick="draw()"><img class="tool_image" src="images/pen.png" alt="pen"></a>
+    <a href="#" id="eraser" onclick="eraser()"><img class="tool_image" src="images/eraser.png" alt="eraser"></a>
+    <a href="#" id="typeword" onclick="typeword()"><img class="tool_image" src="images/text.png" alt="text"></a>
+    <a href="#" id="circle" onclick="drawshape('circle')"><img class="tool_image" src="images/circle.png" alt="circle"></a>
+    <a href="#" id="square" onclick="drawshape('square')"><img class="tool_image" src="images/square.png" alt="square"></a>
+    <a href="#" id="slash" onclick="drawshape('slash')"><img class="tool_image" src="images/slash.png" alt="slash"></a>
+    <a href="#" id="multi" onclick="drawshape('multi')"><img class="tool_image" src="images/multi.png" alt="multi"></a>
+    <a href="#" id="bucket" onclick="bucket()"><img class="tool_image" src="images/bucket.png" alt="bucket"></a>
+    <a href="#" id="picture" onclick="upload_option()"><img class="tool_image" src="images/picture.png" alt="picture"></a>
+    <a href="#" id="download1" download="my_painting.png" onclick="this.href=canvas.toDataURL();"><img class="tool_image" src="images/download.png" alt="download"></a>
+    <a href="#" id="refresh" onclick="refresh()"><img class="tool_image" src="images/refresh.png" alt="refresh"></a>
+  </div>
+  <div class="option_box brush_option" id="brush_option">
+    Brush Size <input id="brush_size" type="range" name="brush_size" min="1" max="100" value="0"><br>
+    Brush Color <input id="brush_color" type="color" name="brush_color" value="#333333"><br>
+  </div>
+  <div class="option_box eraser_option" id="eraser_option">
+    Eraser Size <input id="eraser_size" type="range" name="eraser_size" min="1" max="100" value="0"><br>
+  </div>
+  <div class="option_box shape_option" id="shape_option">
+    Shape Color <input id="shape_color" type="color" name="shape_color" value="#333333"><br>
+  </div>
+  <div class="option_box back_option" id="back_option">
+    Background Color <input id="back_color" type="color" name="back_color" value="#333333"><br>
+  </div>
+  <div class="option_box img_option" id="img_option">
+    <input type="file" id="img" name="img" accept="image/*">
+  </div>
+
+  <div class="option_box font_option" id="font_option">
+    Font Size <input id="font_size" type="range" name="font_size" min="1" max="100" value="0"><br>
+    Font Color <input id="font_color" type="color" name="font_color" value="#333333"><br>
+    Please enter your input string: <input id="font_word" type="textarea" name="font_word"><br>
+    Font typeface<select id="font_typeface" name="font_typeface"><br>
+      　<option value="Arial" font-family:'Arial'>Arial</option>
+      　<option value="Oswald" font-family:'Oswald'>Oswald</option>
+      <option value="Dancing Script" font-family:'Dancing Script'>Dancing Script</option>
+      <option value="Noto Sans TC" font-family:'Noto Sans TC'>Noto Sans 繁體中文</option>
+      <option value="Noto Serif TC" font-family:'Noto Serif TC'>Noto Serif 繁體中文</option><br>
+
+  </div>
+
+  <script src="index.js "> </script>
+
+</body>
+
+</html>
